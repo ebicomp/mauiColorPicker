@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ColorPicker.MainPage">
+
+    <ContentPage.Resources>
+        <Color x:Key="Primary">#ab3527</Color>
+        <Color x:Key="Secondary">#775752</Color>
+        <Color x:Key="Tertiary">#705c2e</Color>
+
+    </ContentPage.Resources>
+    <Grid x:Name="Container" BackgroundColor="Black">
+        <Frame BorderColor="red" BackgroundColor="White" Margin="10,0,10,0" VerticalOptions="Center">
+            <VerticalStackLayout Spacing="15" VerticalOptions="Center">
+                <Label Text="Color Picker"
+                       TextColor="Black"
+                       FontSize="Large"
+                       HorizontalTextAlignment="Center"
+                       FontAttributes="Bold"/>
+                <Label Text="Red Color" TextColor="Black"/>
+                <Slider x:Name="SliderRed"
+                        ThumbColor="{StaticResource Primary}"
+                        ValueChanged="ValueChanged"
+                        MaximumTrackColor="{StaticResource Tertiary}"
+                        MinimumTrackColor="{StaticResource Tertiary}">
+
+                </Slider>
+
+                <Label Text="Green Color" TextColor="Black"/>
+                <Slider x:Name="SliderGreen"
+                        ThumbColor="{StaticResource Primary}"
+                        ValueChanged="ValueChanged"
+                        MaximumTrackColor="{StaticResource Tertiary}"
+                        MinimumTrackColor="{StaticResource Tertiary}">
+
+                </Slider>
+
+                <Label Text="Blue Color" TextColor="Black"/>
+                <Slider x:Name="SliderBlue"
+                        ValueChanged="ValueChanged"
+                        ThumbColor="{StaticResource Primary}"
+                        MaximumTrackColor="{StaticResource Tertiary}"
+                        MinimumTrackColor="{StaticResource Tertiary}">
+
+                </Slider>
+                <Frame HorizontalOptions="Center" CornerRadius="25" BackgroundColor="White">
+                    <HorizontalStackLayout>
+                        <Label x:Name="lblHex"
+                               TextColor="Black"
+                               HorizontalTextAlignment="End"
+                               Text="HEX Value : #000000"
+                               VerticalOptions="Center"/>
+                        
+                        <Button
+                            BackgroundColor="{StaticResource Blue100Accent}"
+                            Margin="10,0,0,0"
+                            TextColor="White"
+                                VerticalOptions="Center"
+                                     WidthRequest="60"
+                                     Text="copy"/>
+                        
+                    </HorizontalStackLayout>
+                </Frame>
+                <Button x:Name="btnRandom"
+                        BackgroundColor="{StaticResource Primary}"
+                        Text="Generate Random Color"
+                        FontSize="Large"
+                        TextColor="white"
+                        Clicked="btnRandom_Clicked"/>
+            </VerticalStackLayout>
+        </Frame>
+
+    </Grid>
+
+</ContentPage>
+
